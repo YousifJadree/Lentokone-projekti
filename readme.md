@@ -1,6 +1,8 @@
 Lentokonepeli (Yousif, Khalid, Zejnel)
 
+
 Pelin idea: 
+
 
 Pelaaja matkustaa Euroopan ympäri, isojen lentokenttien läpi. 
 Peli antaa 3 vihjettä maasta joka arvauksen jälkeen. Ensimmäinen vihje väärän arvauksen jälkeen: Lentokentän nimi. Toinen vihje: Maan väkiluku. Kolmas vihje: Lipun värit.
