@@ -173,3 +173,13 @@ def play_one_question(self, airport):
         print("\nThank you for playing!")
         print("="*60 + "\n")
 
+def start(self):
+        if len(self.airports) == 0:
+            print("Cannot start game without airport data.")
+            return
+        
+        while True:
+            if len(self.remaining_countries) == 0:
+                print("\nCongratulations! You've guessed all countries!")
+                self.show_final_score()
+                return
