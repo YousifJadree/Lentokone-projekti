@@ -130,4 +130,33 @@ def ask_for_guess(self):
             
             print("Please enter a valid 2-letter country code (e.g., GB, FR, DE)")
 
+def play_one_question(self, airport):
+        country_code = airport.country_code
+        country_name = self.countries[country_code]['name']
+
+        attempt = 0
+        while attempt < 3:
+            guess = self.ask_for_guess()
+
+            if guess == 'QUIT':
+                return False
+
+            attempt = attempt + 1
+
+            if guess == country_code:
+                print(f"\nCORRECT!")
+                self.correct_answers = self.correct_answers + 1
+                if country_code in self.remaining_countries:
+                    self.remaining_countries.remove(country_code)
+                return True
+            else:
+                print("\nWrong!")
+                if attempt < 3:
+                    self.get_hint_for_attempt(country_code, attempt)
+                    remaining_attempts = 3 - attempt
+                    print(f"   You have {remaining_attempts} attempt(s) remaining.")
+                else:
+                    print(f"\nThe correct answer was: {country_name} ({country_code})")
+
+        return True
 
