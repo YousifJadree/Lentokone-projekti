@@ -160,3 +160,16 @@ def play_one_question(self, airport):
 
         return True
 
+ def show_final_score(self):
+        print("\n" + "="*60)
+        print("   GAME OVER")
+        print("="*60)
+        
+        if self.total_questions > 0:
+            print(f"\nCorrect answers: {self.correct_answers}/{self.total_questions}")
+        else:
+            print("\nNo questions answered.")
+        
+        print("\nThank you for playing!")
+        print("="*60 + "\n")
+
