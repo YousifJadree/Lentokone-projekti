@@ -183,3 +183,13 @@ def start(self):
                 print("\nCongratulations! You've guessed all countries!")
                 self.show_final_score()
                 return
+
+        available_airports = []
+            for airport in self.airports:
+                if airport.country_code in self.remaining_countries:
+                    available_airports.append(airport)
+
+            if len(available_airports) == 0:
+                print("\nNo more airports available!")
+                self.show_final_score()
+                return
