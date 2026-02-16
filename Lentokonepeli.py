@@ -64,5 +64,21 @@ class Game:
             'AM': {'name': 'Armenia', 'population': '3 million', 'flag_colors': 'Red, Blue, Orange', 'capital': 'Yerevan'},
             'AZ': {'name': 'Azerbaijan', 'population': '10 million', 'flag_colors': 'Blue, Red, Green', 'capital': 'Baku'},
             }
+
+    def load_airports_from_csv(self):
+        file = open('airports.csv', 'r', encoding='utf-8')
+        csv_reader = csv.DictReader(file)
+        
+        for row in csv_reader:
+            is_large_airport = row['type'] == 'large_airport'
+            is_european = row['continent'] == 'EU'
+            has_iata = row['iata_code'] != ''
+            has_country = row['iso_country'] != ''
+            has_name = row['name'] != ''
             
-        }
+            if is_large_airport and is_european and has_iata and has_country and has_name:
+                airport = Airport(row['name'], row['iso_country'])
+                self.airports.append(airport)
+                self.remaining_countries.add(row['iso_country'])
+        
+        file.close()
