@@ -63,4 +63,6 @@ class Game:
             'GE': {'name': 'Georgia', 'population': '3.7 million', 'flag_colors': 'White, Red', 'capital': 'Tbilisi'},
             'AM': {'name': 'Armenia', 'population': '3 million', 'flag_colors': 'Red, Blue, Orange', 'capital': 'Yerevan'},
             'AZ': {'name': 'Azerbaijan', 'population': '10 million', 'flag_colors': 'Blue, Red, Green', 'capital': 'Baku'},
+            }
+            
         }
