@@ -117,4 +117,17 @@ def get_hint_for_attempt(self, country_code, attempt_number):
         elif attempt_number == 3:
             print(f"   Capital: {country_info['capital']}")
 
+def ask_for_guess(self):
+        while True:
+            guess = input("\nEnter country code (2 letters) or 'quit' to exit: ")
+            guess = guess.strip().upper()
+            
+            if guess == 'QUIT':
+                return 'QUIT'
+            
+            if len(guess) == 2 and guess.isalpha():
+                return guess
+            
+            print("Please enter a valid 2-letter country code (e.g., GB, FR, DE)")
+
 
