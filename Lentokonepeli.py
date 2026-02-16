@@ -102,3 +102,19 @@ def show_remaining_countries(self):
             line = country_list[i:i+3]
             print("  " + ", ".join(line))
             i = i + 3
+
+def get_hint_for_attempt(self, country_code, attempt_number):
+        if country_code not in self.countries:
+            return
+        
+        country_info = self.countries[country_code]
+        print("\nHint:")
+        
+        if attempt_number == 1:
+            print(f"   Population: {country_info['population']}")
+        elif attempt_number == 2:
+            print(f"   Flag colors: {country_info['flag_colors']}")
+        elif attempt_number == 3:
+            print(f"   Capital: {country_info['capital']}")
+
+
