@@ -82,3 +82,23 @@ class Game:
                 self.remaining_countries.add(row['iso_country'])
         
         file.close()
+
+def show_remaining_countries(self):
+        if len(self.remaining_countries) == 0:
+            print("\nAll countries have been guessed!")
+            return
+
+        country_list = []
+        for code in self.remaining_countries:
+            if code in self.countries:
+                country_name = self.countries[code]['name']
+                country_list.append(f"{country_name} ({code})")
+
+        country_list.sort()
+
+        print(f"\nRemaining countries ({len(self.remaining_countries)}):")
+        i = 0
+        while i < len(country_list):
+            line = country_list[i:i+3]
+            print("  " + ", ".join(line))
+            i = i + 3
