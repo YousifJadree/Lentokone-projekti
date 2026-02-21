@@ -193,3 +193,31 @@ def start(self):
                 print("\nNo more airports available!")
                 self.show_final_score()
                 return
+
+            airport = random.choice(available_airports)
+            
+            self.total_questions = self.total_questions + 1
+            
+            print(f"\n{'-'*60}")
+            print(f"Question #{self.total_questions}")
+            print(f"{'-'*60}")
+            print(f"\nAirport: {airport.name}")
+            self.show_remaining_countries()
+            
+            continue_playing = self.play_one_question(airport)
+            
+            if not continue_playing:
+                self.total_questions = self.total_questions - 1
+                self.show_final_score()
+                return
+            
+            print(f"\nCurrent score: {self.correct_answers}/{self.total_questions}")
+            
+            answer = input("\nContinue to next airport? (y/n): ").strip().lower()
+            if answer != 'y':
+                self.show_final_score()
+                return
+
+
+game = Game()
+game.start()
