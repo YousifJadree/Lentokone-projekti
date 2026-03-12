@@ -1,7 +1,7 @@
 # tuodaan tarvittavat kirjastot
 import csv      # csv-tiedoston lukemiseen
 import random   # satunnaisten lentoasemien valintaan
-import os       # tiedostopolkujen käsittelyyn
+import os
 
 
 # lentoasema-luokka, jossa on nimi ja maakoodi
@@ -144,17 +144,17 @@ class Game:
         # kysytään pelaajalta arvaus
         while True:
             guess = input("\nEnter country code (2 letters) or 'quit' to exit: ")
-            guess = guess.strip().upper()
+            guess = guess.strip()
             
             # jos pelaaja haluaa lopettaa
-            if guess == 'QUIT':
+            if guess.upper() == 'QUIT':
                 return 'QUIT'
             
-            # tarkistetaan, että syöte on kelvollinen (2 kirjainta)
-            if len(guess) == 2 and guess.isalpha():
+            # tarkistetaan, että syöte on kelvollinen (2 isoa kirjainta)
+            if len(guess) == 2 and guess.isalpha() and guess.isupper():
                 return guess
             
-            print("Please enter a valid 2-letter country code (e.g., GB, FR, DE)")
+            print("Please enter exactly 2 uppercase letters (e.g., GB, FR, DE)")
     
     def play_one_question(self, airport):
         # pelataan yksi kysymyskierros
